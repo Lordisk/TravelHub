@@ -1,0 +1,28 @@
+﻿<Page x:Class="TravelHub.AdminHotelPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TravelHub"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AdminHotelPage">
+
+    <Grid Background="CadetBlue">
+
+
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Button Grid.Row="0" Click="LUJO_Click" Background="CadetBlue" Foreground="White" FontSize="22" Content="LUJO BODRUM" FontWeight="DemiBold" FontFamily="Times New Roman"/>
+        <Button Grid.Row="1" Click="MAXX_Click" Background="CadetBlue" Foreground="White" FontSize="22" Content="MAXX ROYAL BELEK GOLF RESORT" FontWeight="DemiBold" FontFamily="Times New Roman"/>
+        <Button Grid.Row="2" Click="STEIG_Click" Background="CadetBlue" Foreground="White" FontSize="22" Content="STEIGENBERGER ALCAZAR" FontWeight="DemiBold" FontFamily="Times New Roman"/>
+        <Button Grid.Row="3" Click="VOYAGE_Click" Background="CadetBlue" Foreground="White" FontSize="22" Content="VOYAGE SORGUN" FontWeight="DemiBold" FontFamily="Times New Roman"/>
+
+    </Grid>
+</Page>

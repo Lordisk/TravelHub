@@ -1,0 +1,250 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TravelHubModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Basket">
+    <Key>
+      <PropertyRef Name="idBasket" />
+    </Key>
+    <Property Name="idUser" Type="Int32" />
+    <Property Name="idRoom" Type="Int32" />
+    <Property Name="Price1day" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DateBook" Type="DateTime" Precision="0" />
+    <Property Name="TotalCost" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="idBasket" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="LUJO_BODRUM" Relationship="Self.FK_Basket_LUJO_BODRUM" FromRole="Basket" ToRole="LUJO_BODRUM" />
+    <NavigationProperty Name="MAXX_ROYAL_BELEK_GOLF_RESORT" Relationship="Self.FK_Basket_MAXX_ROYAL_BELEK_GOLF_RESORT" FromRole="Basket" ToRole="MAXX_ROYAL_BELEK_GOLF_RESORT" />
+    <NavigationProperty Name="STEIGENBERGER_ALCAZAR" Relationship="Self.FK_Basket_STEIGENBERGER_ALCAZAR" FromRole="Basket" ToRole="STEIGENBERGER_ALCAZAR" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_Basket_Users" FromRole="Basket" ToRole="Users" />
+    <NavigationProperty Name="VOYAGE_SORGUN" Relationship="Self.FK_Basket_VOYAGE_SORGUN" FromRole="Basket" ToRole="VOYAGE_SORGUN" />
+  </EntityType>
+  <EntityType Name="Hotels">
+    <Key>
+      <PropertyRef Name="idHotels" />
+    </Key>
+    <Property Name="idHotels" Type="Int32" Nullable="false" />
+    <Property Name="Hotels1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Stars" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="LUJO_BODRUM" Relationship="Self.FK_LUJO_BODRUM_Hotels" FromRole="Hotels" ToRole="LUJO_BODRUM" />
+    <NavigationProperty Name="MAXX_ROYAL_BELEK_GOLF_RESORT" Relationship="Self.FK_MAXX_ROYAL_BELEK_GOLF_RESORT_Hotels" FromRole="Hotels" ToRole="MAXX_ROYAL_BELEK_GOLF_RESORT" />
+    <NavigationProperty Name="STEIGENBERGER_ALCAZAR" Relationship="Self.FK_STEIGENBERGER_ALCAZAR_Hotels" FromRole="Hotels" ToRole="STEIGENBERGER_ALCAZAR" />
+    <NavigationProperty Name="VOYAGE_SORGUN" Relationship="Self.FK_VOYAGE_SORGUN_Hotels" FromRole="Hotels" ToRole="VOYAGE_SORGUN" />
+  </EntityType>
+  <EntityType Name="LUJO_BODRUM">
+    <Key>
+      <PropertyRef Name="idRoom" />
+    </Key>
+    <Property Name="idRoom" Type="Int32" Nullable="false" />
+    <Property Name="NameRoom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Accessibility" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="People" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Price1day" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="idHotels" Type="Int32" />
+    <NavigationProperty Name="Basket" Relationship="Self.FK_Basket_LUJO_BODRUM" FromRole="LUJO_BODRUM" ToRole="Basket" />
+    <NavigationProperty Name="Hotels" Relationship="Self.FK_LUJO_BODRUM_Hotels" FromRole="LUJO_BODRUM" ToRole="Hotels" />
+  </EntityType>
+  <EntityType Name="MAXX_ROYAL_BELEK_GOLF_RESORT">
+    <Key>
+      <PropertyRef Name="idRoom" />
+    </Key>
+    <Property Name="idRoom" Type="Int32" Nullable="false" />
+    <Property Name="NameRoom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Accessibility" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="People" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Price1day" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="idHotels" Type="Int32" />
+    <NavigationProperty Name="Basket" Relationship="Self.FK_Basket_MAXX_ROYAL_BELEK_GOLF_RESORT" FromRole="MAXX_ROYAL_BELEK_GOLF_RESORT" ToRole="Basket" />
+    <NavigationProperty Name="Hotels" Relationship="Self.FK_MAXX_ROYAL_BELEK_GOLF_RESORT_Hotels" FromRole="MAXX_ROYAL_BELEK_GOLF_RESORT" ToRole="Hotels" />
+  </EntityType>
+  <EntityType Name="STEIGENBERGER_ALCAZAR">
+    <Key>
+      <PropertyRef Name="idRoom" />
+    </Key>
+    <Property Name="idRoom" Type="Int32" Nullable="false" />
+    <Property Name="NameRoom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Accessibility" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="People" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Price1day" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="idHotels" Type="Int32" />
+    <NavigationProperty Name="Basket" Relationship="Self.FK_Basket_STEIGENBERGER_ALCAZAR" FromRole="STEIGENBERGER_ALCAZAR" ToRole="Basket" />
+    <NavigationProperty Name="Hotels" Relationship="Self.FK_STEIGENBERGER_ALCAZAR_Hotels" FromRole="STEIGENBERGER_ALCAZAR" ToRole="Hotels" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="idUser" />
+    </Key>
+    <Property Name="idUser" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SecondName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Role" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Basket" Relationship="Self.FK_Basket_Users" FromRole="Users" ToRole="Basket" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="VOYAGE_SORGUN">
+    <Key>
+      <PropertyRef Name="idRoom" />
+    </Key>
+    <Property Name="idRoom" Type="Int32" Nullable="false" />
+    <Property Name="NameRoom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Accessibility" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="People" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Price1day" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="idHotels" Type="Int32" />
+    <NavigationProperty Name="Basket" Relationship="Self.FK_Basket_VOYAGE_SORGUN" FromRole="VOYAGE_SORGUN" ToRole="Basket" />
+    <NavigationProperty Name="Hotels" Relationship="Self.FK_VOYAGE_SORGUN_Hotels" FromRole="VOYAGE_SORGUN" ToRole="Hotels" />
+  </EntityType>
+  <Association Name="FK_Basket_LUJO_BODRUM">
+    <End Role="LUJO_BODRUM" Type="Self.LUJO_BODRUM" Multiplicity="0..1" />
+    <End Role="Basket" Type="Self.Basket" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LUJO_BODRUM">
+        <PropertyRef Name="idRoom" />
+      </Principal>
+      <Dependent Role="Basket">
+        <PropertyRef Name="idRoom" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Basket_MAXX_ROYAL_BELEK_GOLF_RESORT">
+    <End Role="MAXX_ROYAL_BELEK_GOLF_RESORT" Type="Self.MAXX_ROYAL_BELEK_GOLF_RESORT" Multiplicity="0..1" />
+    <End Role="Basket" Type="Self.Basket" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MAXX_ROYAL_BELEK_GOLF_RESORT">
+        <PropertyRef Name="idRoom" />
+      </Principal>
+      <Dependent Role="Basket">
+        <PropertyRef Name="idRoom" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Basket_STEIGENBERGER_ALCAZAR">
+    <End Role="STEIGENBERGER_ALCAZAR" Type="Self.STEIGENBERGER_ALCAZAR" Multiplicity="0..1" />
+    <End Role="Basket" Type="Self.Basket" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STEIGENBERGER_ALCAZAR">
+        <PropertyRef Name="idRoom" />
+      </Principal>
+      <Dependent Role="Basket">
+        <PropertyRef Name="idRoom" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Basket_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Basket" Type="Self.Basket" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Basket">
+        <PropertyRef Name="idUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Basket_VOYAGE_SORGUN">
+    <End Role="VOYAGE_SORGUN" Type="Self.VOYAGE_SORGUN" Multiplicity="0..1" />
+    <End Role="Basket" Type="Self.Basket" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VOYAGE_SORGUN">
+        <PropertyRef Name="idRoom" />
+      </Principal>
+      <Dependent Role="Basket">
+        <PropertyRef Name="idRoom" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LUJO_BODRUM_Hotels">
+    <End Role="Hotels" Type="Self.Hotels" Multiplicity="0..1" />
+    <End Role="LUJO_BODRUM" Type="Self.LUJO_BODRUM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hotels">
+        <PropertyRef Name="idHotels" />
+      </Principal>
+      <Dependent Role="LUJO_BODRUM">
+        <PropertyRef Name="idHotels" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MAXX_ROYAL_BELEK_GOLF_RESORT_Hotels">
+    <End Role="Hotels" Type="Self.Hotels" Multiplicity="0..1" />
+    <End Role="MAXX_ROYAL_BELEK_GOLF_RESORT" Type="Self.MAXX_ROYAL_BELEK_GOLF_RESORT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hotels">
+        <PropertyRef Name="idHotels" />
+      </Principal>
+      <Dependent Role="MAXX_ROYAL_BELEK_GOLF_RESORT">
+        <PropertyRef Name="idHotels" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STEIGENBERGER_ALCAZAR_Hotels">
+    <End Role="Hotels" Type="Self.Hotels" Multiplicity="0..1" />
+    <End Role="STEIGENBERGER_ALCAZAR" Type="Self.STEIGENBERGER_ALCAZAR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hotels">
+        <PropertyRef Name="idHotels" />
+      </Principal>
+      <Dependent Role="STEIGENBERGER_ALCAZAR">
+        <PropertyRef Name="idHotels" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VOYAGE_SORGUN_Hotels">
+    <End Role="Hotels" Type="Self.Hotels" Multiplicity="0..1" />
+    <End Role="VOYAGE_SORGUN" Type="Self.VOYAGE_SORGUN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hotels">
+        <PropertyRef Name="idHotels" />
+      </Principal>
+      <Dependent Role="VOYAGE_SORGUN">
+        <PropertyRef Name="idHotels" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TravelHubEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Basket" EntityType="Self.Basket" />
+    <EntitySet Name="Hotels" EntityType="Self.Hotels" />
+    <EntitySet Name="LUJO_BODRUM" EntityType="Self.LUJO_BODRUM" />
+    <EntitySet Name="MAXX_ROYAL_BELEK_GOLF_RESORT" EntityType="Self.MAXX_ROYAL_BELEK_GOLF_RESORT" />
+    <EntitySet Name="STEIGENBERGER_ALCAZAR" EntityType="Self.STEIGENBERGER_ALCAZAR" />
+    <EntitySet Name="Users" EntityType="Self.Users" />
+    <EntitySet Name="VOYAGE_SORGUN" EntityType="Self.VOYAGE_SORGUN" />
+    <AssociationSet Name="FK_Basket_LUJO_BODRUM" Association="Self.FK_Basket_LUJO_BODRUM">
+      <End Role="LUJO_BODRUM" EntitySet="LUJO_BODRUM" />
+      <End Role="Basket" EntitySet="Basket" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Basket_MAXX_ROYAL_BELEK_GOLF_RESORT" Association="Self.FK_Basket_MAXX_ROYAL_BELEK_GOLF_RESORT">
+      <End Role="MAXX_ROYAL_BELEK_GOLF_RESORT" EntitySet="MAXX_ROYAL_BELEK_GOLF_RESORT" />
+      <End Role="Basket" EntitySet="Basket" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Basket_STEIGENBERGER_ALCAZAR" Association="Self.FK_Basket_STEIGENBERGER_ALCAZAR">
+      <End Role="STEIGENBERGER_ALCAZAR" EntitySet="STEIGENBERGER_ALCAZAR" />
+      <End Role="Basket" EntitySet="Basket" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Basket_Users" Association="Self.FK_Basket_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Basket" EntitySet="Basket" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Basket_VOYAGE_SORGUN" Association="Self.FK_Basket_VOYAGE_SORGUN">
+      <End Role="VOYAGE_SORGUN" EntitySet="VOYAGE_SORGUN" />
+      <End Role="Basket" EntitySet="Basket" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LUJO_BODRUM_Hotels" Association="Self.FK_LUJO_BODRUM_Hotels">
+      <End Role="Hotels" EntitySet="Hotels" />
+      <End Role="LUJO_BODRUM" EntitySet="LUJO_BODRUM" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MAXX_ROYAL_BELEK_GOLF_RESORT_Hotels" Association="Self.FK_MAXX_ROYAL_BELEK_GOLF_RESORT_Hotels">
+      <End Role="Hotels" EntitySet="Hotels" />
+      <End Role="MAXX_ROYAL_BELEK_GOLF_RESORT" EntitySet="MAXX_ROYAL_BELEK_GOLF_RESORT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STEIGENBERGER_ALCAZAR_Hotels" Association="Self.FK_STEIGENBERGER_ALCAZAR_Hotels">
+      <End Role="Hotels" EntitySet="Hotels" />
+      <End Role="STEIGENBERGER_ALCAZAR" EntitySet="STEIGENBERGER_ALCAZAR" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VOYAGE_SORGUN_Hotels" Association="Self.FK_VOYAGE_SORGUN_Hotels">
+      <End Role="Hotels" EntitySet="Hotels" />
+      <End Role="VOYAGE_SORGUN" EntitySet="VOYAGE_SORGUN" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

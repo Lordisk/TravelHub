@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище TravelHubModelContainer" CdmEntityContainer="TravelHubEntities">
+    <EntitySetMapping Name="Basket">
+      <EntityTypeMapping TypeName="TravelHubModel.Basket">
+        <MappingFragment StoreEntitySet="Basket">
+          <ScalarProperty Name="idUser" ColumnName="idUser" />
+          <ScalarProperty Name="idRoom" ColumnName="idRoom" />
+          <ScalarProperty Name="Price1day" ColumnName="Price1day" />
+          <ScalarProperty Name="DateBook" ColumnName="DateBook" />
+          <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
+          <ScalarProperty Name="idBasket" ColumnName="idBasket" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hotels">
+      <EntityTypeMapping TypeName="TravelHubModel.Hotels">
+        <MappingFragment StoreEntitySet="Hotels">
+          <ScalarProperty Name="idHotels" ColumnName="idHotels" />
+          <ScalarProperty Name="Hotels1" ColumnName="Hotels" />
+          <ScalarProperty Name="Stars" ColumnName="Stars" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LUJO_BODRUM">
+      <EntityTypeMapping TypeName="TravelHubModel.LUJO_BODRUM">
+        <MappingFragment StoreEntitySet="LUJO BODRUM">
+          <ScalarProperty Name="idRoom" ColumnName="idRoom" />
+          <ScalarProperty Name="NameRoom" ColumnName="NameRoom" />
+          <ScalarProperty Name="Accessibility" ColumnName="Accessibility" />
+          <ScalarProperty Name="People" ColumnName="People" />
+          <ScalarProperty Name="Price1day" ColumnName="Price1day" />
+          <ScalarProperty Name="idHotels" ColumnName="idHotels" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MAXX_ROYAL_BELEK_GOLF_RESORT">
+      <EntityTypeMapping TypeName="TravelHubModel.MAXX_ROYAL_BELEK_GOLF_RESORT">
+        <MappingFragment StoreEntitySet="MAXX ROYAL BELEK GOLF RESORT">
+          <ScalarProperty Name="idRoom" ColumnName="idRoom" />
+          <ScalarProperty Name="NameRoom" ColumnName="NameRoom" />
+          <ScalarProperty Name="Accessibility" ColumnName="Accessibility" />
+          <ScalarProperty Name="People" ColumnName="People" />
+          <ScalarProperty Name="Price1day" ColumnName="Price1day" />
+          <ScalarProperty Name="idHotels" ColumnName="idHotels" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="STEIGENBERGER_ALCAZAR">
+      <EntityTypeMapping TypeName="TravelHubModel.STEIGENBERGER_ALCAZAR">
+        <MappingFragment StoreEntitySet="STEIGENBERGER ALCAZAR">
+          <ScalarProperty Name="idRoom" ColumnName="idRoom" />
+          <ScalarProperty Name="NameRoom" ColumnName="NameRoom" />
+          <ScalarProperty Name="Accessibility" ColumnName="Accessibility" />
+          <ScalarProperty Name="People" ColumnName="People" />
+          <ScalarProperty Name="Price1day" ColumnName="Price1day" />
+          <ScalarProperty Name="idHotels" ColumnName="idHotels" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="TravelHubModel.Users">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="idUser" ColumnName="idUser" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="SecondName" ColumnName="SecondName" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VOYAGE_SORGUN">
+      <EntityTypeMapping TypeName="TravelHubModel.VOYAGE_SORGUN">
+        <MappingFragment StoreEntitySet="VOYAGE SORGUN">
+          <ScalarProperty Name="idRoom" ColumnName="idRoom" />
+          <ScalarProperty Name="NameRoom" ColumnName="NameRoom" />
+          <ScalarProperty Name="Accessibility" ColumnName="Accessibility" />
+          <ScalarProperty Name="People" ColumnName="People" />
+          <ScalarProperty Name="Price1day" ColumnName="Price1day" />
+          <ScalarProperty Name="idHotels" ColumnName="idHotels" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

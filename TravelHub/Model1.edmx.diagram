@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ab5e86bccf9f4509af2c0f9cecbfb01e" Name="Diagram1">
+        <EntityTypeShape EntityType="TravelHubModel.Basket" Width="1.5" PointX="5.25" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TravelHubModel.Hotels" Width="1.5" PointX="0.75" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TravelHubModel.LUJO_BODRUM" Width="1.5" PointX="3" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TravelHubModel.MAXX_ROYAL_BELEK_GOLF_RESORT" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TravelHubModel.STEIGENBERGER_ALCAZAR" Width="1.5" PointX="3" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TravelHubModel.Users" Width="1.5" PointX="7.5" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="TravelHubModel.VOYAGE_SORGUN" Width="1.5" PointX="3" PointY="11.75" IsExpanded="true" />
+        <AssociationConnector Association="TravelHubModel.FK_Basket_LUJO_BODRUM" ManuallyRouted="false" />
+        <AssociationConnector Association="TravelHubModel.FK_Basket_MAXX_ROYAL_BELEK_GOLF_RESORT" ManuallyRouted="false" />
+        <AssociationConnector Association="TravelHubModel.FK_Basket_STEIGENBERGER_ALCAZAR" ManuallyRouted="false" />
+        <AssociationConnector Association="TravelHubModel.FK_Basket_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="TravelHubModel.FK_Basket_VOYAGE_SORGUN" ManuallyRouted="false" />
+        <AssociationConnector Association="TravelHubModel.FK_LUJO_BODRUM_Hotels" ManuallyRouted="false" />
+        <AssociationConnector Association="TravelHubModel.FK_MAXX_ROYAL_BELEK_GOLF_RESORT_Hotels" ManuallyRouted="false" />
+        <AssociationConnector Association="TravelHubModel.FK_STEIGENBERGER_ALCAZAR_Hotels" ManuallyRouted="false" />
+        <AssociationConnector Association="TravelHubModel.FK_VOYAGE_SORGUN_Hotels" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

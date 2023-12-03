@@ -1,0 +1,82 @@
+﻿<Page x:Class="TravelHub.AdminRoom4Page"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TravelHub"
+      Loaded="Page_Loaded"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AdminRoom4Page">
+
+    <Grid  Background="CadetBlue">
+
+
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+        <Border>
+            <TextBlock Text="ОТЕЛЬ VOYAGE SORGUN"  FontWeight="DemiBold" FontFamily="Times New Roman" Foreground="White" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Border>
+
+        <DataGrid Grid.Row="1"
+      x:Name="VOYAGE_SORGUN"
+      AutoGenerateColumns="False" Background="{x:Null}"
+      RowBackground="White"
+      AlternatingRowBackground="White"
+      BorderBrush="#FF1F33EB">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Описание номера" Width="*" Binding="{Binding NameRoom}"/>
+                <DataGridTextColumn Header="Доступность" Width="*" Binding="{Binding Accessibility}"/>
+                <DataGridTextColumn Header="Вместительность" Width="*" Binding="{Binding People}"/>
+                <DataGridTextColumn Header="Стоимость за 1 день" Width="*" Binding="{Binding Price1day}"/>
+
+
+            </DataGrid.Columns>
+
+        </DataGrid>
+
+        <StackPanel Grid.Row="2"
+        VerticalAlignment="Center"
+        Orientation="Horizontal"
+        HorizontalAlignment="Center">
+
+
+
+            <Button Width="120"
+        Content="Редактировать"
+        Click="ButtonEdit_Click"
+        Margin="10 0"
+        FontSize="15" Background="DarkSlateGray"  Foreground="White"/>
+
+            <Button Height="25"
+        Click="ButtonSave_Click"
+        Content="Сохранить"
+        Width="100"  FontSize="15"
+        Margin="10 0" Background="DarkSlateGray"  Foreground="White"/>
+
+
+            <Button Height="25"
+        Click="ButtonAdd_Click"
+        Content="Добавить"
+        Width="100"  FontSize="15"
+        Margin="10 0" Background="DarkSlateGray"  Foreground="White"/>
+
+            <Button Height="25"
+        Click="ButtonDelete_Click"
+        Content="Удалить"
+        Width="100"  FontSize="15"
+        Margin="10 0" Background="DarkSlateGray"  Foreground="White"/>
+
+        </StackPanel>
+        <StackPanel Grid.Row="0"
+        Orientation="Horizontal"
+        VerticalAlignment="Center"
+        HorizontalAlignment="Center"/>
+    </Grid>
+</Page>
+
